@@ -1,0 +1,25 @@
+{
+  "name": "riot-static_data_viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "$(npm bin)/electron main.js",
+    "build": "$(npm bin)/browserify -t babelify -o bundle.js src/main.js",
+    "watch": "$(npm bin)/watchify -t babelify -o bundle.js src/main.js -v"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "6.13.2",
+    "babel-preset-react": "6.11.1",
+    "babelify": "7.3.0",
+    "electron-prebuilt": "1.3.3",
+    "watchify": "3.7.0"
+  },
+  "dependencies": {
+    "react": "15.3.1",
+    "react-dom": "15.3.1"
+  }
+}
