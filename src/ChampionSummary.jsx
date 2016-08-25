@@ -5,24 +5,24 @@ import ChampionStatus from './ChampionStatus.jsx';
 
 export default class ChampionSummary extends React.Component {
   render() {
-    if (!this.props.data) { return null; }
+    if (!this.props.champion) { return null; }
     return (<div className="champion-summary">
       <Row>
         <Col md={3}>
-          <Image src={`assets/img/champion/${this.props.data.image.full}`} thumbnail />
+          <Image src={`assets/img/champion/${this.props.champion.image.full}`} thumbnail />
         </Col>
         <Col md={6}>
-          <Row>{this.props.data.name}</Row>
-          <Row>{this.props.data.title}</Row>
-          <Row>{this.props.data.tags.join(' / ')}</Row>
+          <Row>{this.props.champion.name}</Row>
+          <Row>{this.props.champion.title}</Row>
+          <Row>{this.props.champion.tags.join(' / ')}</Row>
         </Col>
       </Row>
       <Row>
-        <ChampionStatus data={this.props.data.stats} />
+        <ChampionStatus status={this.props.champion.stats} />
       </Row>
     </div>);
   }
 }
 ChampionSummary.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  champion: React.PropTypes.object.isRequired,
 };

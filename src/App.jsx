@@ -4,11 +4,11 @@ import ChampionGrid from './ChampionGrid.jsx';
 
 export default class App extends React.Component {
   render() {
-    if (!this.props.champion) { return null; }
-    return (<ChampionGrid champion={this.props.champion} />);
+    if (!this.props.data) { return null; }
+    return (<ChampionGrid champions={this.props.data.champion.data} />);
   }
 }
 
 App.propTypes = {
-  champion: React.PropTypes.object.isRequired,
+  data: React.PropTypes.object.isRequired,
 };

@@ -5,14 +5,14 @@ import ChampionSummary from './ChampionSummary.jsx';
 
 export default class ChampionGrid extends React.Component {
   render() {
-    if (!this.props.champion) { return null; }
+    if (!this.props.champions) { return null; }
     return (
       <Grid>
         <Row>
         {
-          Object.keys(this.props.champion).map((name) =>
-            <Col xs={12} md={4} key={this.props.champion[name].id}>
-              <ChampionSummary data={this.props.champion[name]} />
+          Object.keys(this.props.champions).map((name) =>
+            <Col xs={12} md={4} key={this.props.champions[name].id}>
+              <ChampionSummary champion={this.props.champions[name]} />
             </Col>
           )
         }
@@ -23,5 +23,5 @@ export default class ChampionGrid extends React.Component {
 }
 
 ChampionGrid.propTypes = {
-  champion: React.PropTypes.object.isRequired,
+  champions: React.PropTypes.object.isRequired,
 };

@@ -4,30 +4,30 @@ import { Row, Col } from 'react-bootstrap';
 
 export default class ChampionStatus extends React.Component {
   render() {
-    if (!this.props.data) { return null; }
+    if (!this.props.status) { return null; }
     return (<div className="champion-status">
       <Col md={6}>
-        <Row>Health: {this.props.data.hp} (+{this.props.data.hpperlevel})</Row>
-        <Row>Health Regen: {this.props.data.hpregen} (+{this.props.data.hpregenperlevel})</Row>
-        <Row>Mana: {this.props.data.mp} (+{this.props.data.mpperlevel})</Row>
-        <Row>Mana Regen: {this.props.data.mpregen} (+{this.props.data.mpregenperlevel})</Row>
-        <Row>Move Speed: {this.props.data.movespeed}</Row>
+        <Row>Health: {this.props.status.hp} (+{this.props.status.hpperlevel})</Row>
+        <Row>Health Regen: {this.props.status.hpregen} (+{this.props.status.hpregenperlevel})</Row>
+        <Row>Mana: {this.props.status.mp} (+{this.props.status.mpperlevel})</Row>
+        <Row>Mana Regen: {this.props.status.mpregen} (+{this.props.status.mpregenperlevel})</Row>
+        <Row>Move Speed: {this.props.status.movespeed}</Row>
       </Col>
       <Col md={6}>
         <Row>
-          Att. Damage: {this.props.data.attackdamage} (+{this.props.data.attackdamageperlevel})
+          Att. Damage: {this.props.status.attackdamage} (+{this.props.status.attackdamageperlevel})
         </Row>
         <Row>
           Att. Speed: {
-            (1 / (1.6 * (1 + this.props.data.attackspeedoffset))).toFixed(3)
-          } (+{this.props.data.attackspeedperlevel}%)
+            (1 / (1.6 * (1 + this.props.status.attackspeedoffset))).toFixed(3)
+          } (+{this.props.status.attackspeedperlevel}%)
         </Row>
-        <Row>Att. Range: {this.props.data.attackrange}</Row>
-        <Row>Armor: {this.props.data.armor} (+{this.props.data.armorperlevel})</Row>
-        <Row>MR: {this.props.data.spellblock} (+{this.props.data.spellblockperlevel})</Row>
+        <Row>Att. Range: {this.props.status.attackrange}</Row>
+        <Row>Armor: {this.props.status.armor} (+{this.props.status.armorperlevel})</Row>
+        <Row>MR: {this.props.status.spellblock} (+{this.props.status.spellblockperlevel})</Row>
       </Col></div>);
   }
 }
 ChampionStatus.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  status: React.PropTypes.object.isRequired,
 };
