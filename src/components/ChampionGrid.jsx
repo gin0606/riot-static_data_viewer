@@ -1,12 +1,14 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ChampionFilterTextInput from './ChampionFilterTextInput.jsx';
 import ChampionSummary from './ChampionSummary.jsx';
 
 
 export default class ChampionGrid extends React.Component {
   render() {
     if (!this.props.champions) { return null; }
-    return (
+    return (<div>
+      <ChampionFilterTextInput />
       <Grid>
         <Row>
         {
@@ -18,7 +20,7 @@ export default class ChampionGrid extends React.Component {
         }
         </Row>
       </Grid>
-    );
+    </div>);
   }
 }
 

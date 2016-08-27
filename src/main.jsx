@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './AppContainer.jsx';
+import App from './components/App.jsx';
 
-ReactDOM.render(<AppContainer />, document.querySelector('.mainContainer'));
+ReactDOM.render(<App />, document.querySelector('.mainContainer'));
