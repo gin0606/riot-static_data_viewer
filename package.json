@@ -7,7 +7,7 @@
     "start": "$(npm bin)/electron main.js",
     "build": "$(npm bin)/browserify -t babelify -o bundle.js src/main.jsx",
     "watch": "$(npm bin)/watchify -t babelify -o bundle.js src/main.jsx -v",
-    "lint": "$(npm bin)/eslint src/**/*.jsx"
+    "lint": "$(npm bin)/eslint src/**/*.{js,jsx}"
   },
   "keywords": [],
   "author": "",
