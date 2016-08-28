@@ -12,12 +12,12 @@ class ChampionStore extends EventEmitter {
     this.champions = champion.data;
   }
 
-  actionHandler(action) {
-    switch (action.actionType) {
+  actionHandler(payload) {
+    switch (payload.actionType) {
       case 'CHAMPION_FILTER':
         this.champions = {};
         Object.keys(champion.data).forEach((name) => {
-          if (name.toLowerCase().indexOf(action.text.toLowerCase()) < 0) { return; }
+          if (name.toLowerCase().indexOf(payload.text.toLowerCase()) < 0) { return; }
           this.champions[name] = champion.data[name];
         });
         this.emitChange();
