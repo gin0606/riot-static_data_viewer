@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher.js';
+import ChampionConstants from '../constants/ChampionConstants.js';
 import champion from '../../assets/data/ja_JP/champion.json';
 
 const CHANGE_EVENT = 'change';
@@ -14,7 +15,7 @@ class ChampionStore extends EventEmitter {
 
   actionHandler(payload) {
     switch (payload.actionType) {
-      case 'CHAMPION_FILTER':
+      case ChampionConstants.ActionType.Filter:
         this.champions = {};
         Object.keys(champion.data).forEach((name) => {
           if (name.toLowerCase().indexOf(payload.text.toLowerCase()) < 0) { return; }
